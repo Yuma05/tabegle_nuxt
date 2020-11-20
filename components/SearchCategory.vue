@@ -9,13 +9,13 @@
     clearable
     hide-no-data
     item-text="searchTarget"
-    placeholder="エリア・駅で検索"
-    prepend-icon="mdi-map-marker"
+    placeholder="ジャンルで検索"
+    prepend-icon="mdi-silverware "
     return-object
     outlined
     rounded
     dense
-    @change="sendPlace"
+    @change="sendCategory"
   >
     <template v-slot:selection="{ attr, on, item }">
       <div class="v-select__selection v-select__selection--comma">
@@ -57,7 +57,7 @@ export default {
 
       this.isLoading = true
       axios
-        .get('/api/search/place?q=' + val)
+        .get('/api/search/category?q=' + val)
         .then((res) => {
           console.log(res.data)
           this.entries = res.data
@@ -68,11 +68,11 @@ export default {
   },
 
   methods: {
-    sendPlace() {
+    sendCategory() {
       if (this.model == null) {
-        this.$emit('changePlace', '')
+        this.$emit('changeCategory', '')
       } else {
-        this.$emit('changePlace', this.model.place_code)
+        this.$emit('changeCategory', this.model.category_code)
       }
     },
   },
