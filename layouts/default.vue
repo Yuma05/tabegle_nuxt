@@ -1,9 +1,10 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer v-model="drawer" fixed app> </v-navigation-drawer>
-    <v-app-bar fixed app>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+    <v-app-bar color="#F5A002" fixed app>
+      <v-toolbar-title
+        class="text-center white--text mx-auto font-weight-bold text-h4"
+        >Tabegle</v-toolbar-title
+      >
     </v-app-bar>
     <v-content>
       <v-container>
@@ -18,7 +19,6 @@ export default {
   data() {
     return {
       clipped: false,
-      drawer: false,
       fixed: false,
       miniVariant: false,
       right: true,

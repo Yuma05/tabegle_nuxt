@@ -1,13 +1,21 @@
 <template>
   <v-container>
-    <search-place @changePlace="setPlace"></search-place>
-    <search-category @changeCategory="setCategory"></search-category>
-    <v-btn icon color="orange" @click="searchShop">
-      <v-icon>mdi-magnify</v-icon>
-    </v-btn>
+    <v-row justify="center" align-content="center">
+      <v-col cols="11" md="5" class="pb-0">
+        <search-place @changePlace="setPlace"></search-place
+      ></v-col>
+      <v-col cols="11" md="5" class="pb-0">
+        <search-category @changeCategory="setCategory"></search-category
+      ></v-col>
+      <v-col cols="auto">
+        <v-btn outlined rounded color="orange" @click="searchShop"
+          ><v-icon>mdi-magnify</v-icon>検索</v-btn
+        >
+      </v-col>
+    </v-row>
+
     <shop-card :shops="shops"></shop-card>
 
-    <stars-rating></stars-rating>
     <v-card>
       <v-card-text>{{ place }}</v-card-text>
       <v-card-text>{{ category }}</v-card-text>
@@ -20,11 +28,10 @@
 import axios from 'axios'
 import SearchPlace from '@/components/SearchPlace'
 import SearchCategory from '@/components/SearchCategory'
-import StarsRating from '@/components/StarRating'
 import ShopCard from '@/components/ShopCard'
 
 export default {
-  components: { ShopCard, StarsRating, SearchCategory, SearchPlace },
+  components: { ShopCard, SearchCategory, SearchPlace },
   data() {
     return {
       test: 0,
