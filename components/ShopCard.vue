@@ -84,7 +84,7 @@
                 <v-card-text>
                   <v-icon color="red">mdi-map-marker</v-icon>
                   <span class="grey--text text--darken-2">{{
-                    shop.address
+                    shop.address.substr(13)
                   }}</span>
                 </v-card-text>
                 <div class="d-flex flex-row">
