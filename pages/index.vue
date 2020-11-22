@@ -8,7 +8,7 @@
         <search-category @changeCategory="setCategory"></search-category
       ></v-col>
       <v-col cols="auto">
-        <v-btn outlined rounded color="orange" @click="searchShop"
+        <v-btn dark color="orange" @click="searchShop"
           ><v-icon>mdi-magnify</v-icon>検索</v-btn
         >
       </v-col>
