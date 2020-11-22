@@ -1,7 +1,7 @@
 <template>
   <div>
     <template v-if="$vuetify.breakpoint.xs">
-      <v-card v-for="shop in shops" :key="shop" class="mb-5">
+      <v-card v-for="shop in shops" :key="shop.id" class="mb-5">
         <v-img height="200" :src="shop.img_src"></v-img>
         <v-card-title class="font-weight-bold pb-0">
           {{ shop.name }}
@@ -68,7 +68,7 @@
     </template>
     <template v-else>
       <v-row>
-        <v-col v-for="shop in shops" :key="shop" cols="12" xl="6">
+        <v-col v-for="shop in shops" :key="shop.id" cols="12" xl="6">
           <v-card class="mb-5">
             <div class="d-flex flex-row">
               <v-avatar size="200" tile>
@@ -98,7 +98,7 @@
                     ></v-img>
                     <stars-rating
                       :rating="shop.tabelog_rating"
-                      star-size="25"
+                      :star-size="25"
                     ></stars-rating>
                   </div>
                   <div class="d-flex flex-row ml-5">
@@ -111,7 +111,7 @@
                     ></v-img>
                     <stars-rating
                       :rating="shop.google_rating"
-                      star-size="25"
+                      :star-size="25"
                     ></stars-rating>
                   </div>
                 </div>
@@ -119,7 +119,7 @@
                   <span class="font-weight-bold mr-2">おすすめ度</span>
                   <stars-rating
                     :rating="shop.total_rating"
-                    star-size="25"
+                    :star-size="25"
                   ></stars-rating>
                 </div>
               </div>
