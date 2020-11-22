@@ -14,14 +14,19 @@
 <script>
 export default {
   name: 'LoadingBox',
-  data() {
-    return {
-      isShow: true,
-      messages: [
+  props: {
+    messages: {
+      type: Array,
+      default: () => [
         'おいしいお店を探しています...',
         '時間がかかる場合があります',
         'もう少しです',
       ],
+    },
+  },
+  data() {
+    return {
+      isShow: true,
       message: '',
     }
   },
