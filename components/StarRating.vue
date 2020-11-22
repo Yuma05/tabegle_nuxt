@@ -52,8 +52,6 @@
 <script>
 export default {
   name: 'StarsRating',
-  components: {},
-  directives: {},
   props: {
     rating: {
       type: Number,
