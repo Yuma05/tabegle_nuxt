@@ -10,7 +10,7 @@
     hide-no-data
     item-text="searchTarget"
     placeholder="ジャンルで検索"
-    prepend-icon="mdi-silverware "
+    prepend-inner-icon="mdi-silverware "
     return-object
     outlined
     rounded

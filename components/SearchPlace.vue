@@ -10,7 +10,7 @@
     hide-no-data
     item-text="searchTarget"
     placeholder="エリア・駅で検索"
-    prepend-icon="mdi-map-marker"
+    prepend-inner-icon="mdi-map-marker"
     return-object
     outlined
     rounded
