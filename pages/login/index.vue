@@ -76,6 +76,7 @@ export default {
             this.errorMessage =
               '申し訳ありません。時間をおいてから再度アクセスしてください。'
           }
+          console.log(e.response)
         })
     },
   },

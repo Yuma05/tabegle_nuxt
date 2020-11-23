@@ -68,7 +68,7 @@ export default {
         .then((res) => {
           this.userShopIds = res.data.shops.map((item) => item.id)
         })
-        .catch((e) => console.log(e))
+        .catch((e) => console.log(e.response))
     },
     addUserShop(id) {
       const key = this.$cookies.get('key')
