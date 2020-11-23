@@ -57,7 +57,7 @@ export default {
 
       this.isLoading = true
       axios
-        .get('/api/search/place?q=' + val)
+        .get('https://tabegle.herokuapp.com/api/search/place?q=' + val)
         .then((res) => {
           console.log(res.data)
           this.entries = res.data
