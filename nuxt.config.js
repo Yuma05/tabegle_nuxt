@@ -57,6 +57,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     '@nuxtjs/proxy',
+    ['cookie-universal-nuxt', { parseJSON: false }],
   ],
   /*
    ** Axios module configuration
@@ -76,7 +77,7 @@ export default {
 
   proxy: {
     '/api': {
-      target: 'http://127.0.0.1:8000',
+      target: 'https://tabegle.herokuapp.com',
       pathRewrite: {
         '^/api': '/api',
       },
