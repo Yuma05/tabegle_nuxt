@@ -57,7 +57,7 @@ export default {
 
       this.isLoading = true
       axios
-        .get('/api/search/category?q=' + val)
+        .get('/api/search/category/?q=' + val)
         .then((res) => {
           console.log(res.data)
           this.entries = res.data

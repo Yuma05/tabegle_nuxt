@@ -49,7 +49,6 @@ export default {
       })
     },
   },
-
   watch: {
     search(val) {
       if (val == null || val.length <= 1) return
@@ -57,7 +56,7 @@ export default {
 
       this.isLoading = true
       axios
-        .get('https://tabegle.herokuapp.com/api/search/place?q=' + val)
+        .get('/api/search/place/?q=' + val)
         .then((res) => {
           console.log(res.data)
           this.entries = res.data

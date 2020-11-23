@@ -4,6 +4,5 @@ import Vue from 'vue'
 // const BASE_URL = 'localhost:8000/'
 
 Vue.prototype.$test = () => {
-  console.log('hello')
-  return 'hello'
+  return 'https://tabegle.herokuapp.com'
 }

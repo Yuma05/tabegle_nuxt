@@ -54,7 +54,7 @@ export default {
           this.shops = res.data.shops
           this.userShopIds = res.data.shops.map((item) => item.id)
         })
-        .catch((e) => console.log(e))
+        .catch((e) => console.log(e.response))
         .finally((this.isLoading = false))
     },
     deleteUserShop(id) {

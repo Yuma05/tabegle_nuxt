@@ -63,9 +63,7 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {
-    baseURL: 'https://tabegle.herokuapp.com',
-  },
+  axios: {},
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
@@ -78,6 +76,6 @@ export default {
   build: {},
 
   proxy: {
-    '/api': 'https://tabegle.herokuapp.com',
+    // '/api': 'http://127.0.0.1:8000',
   },
 }

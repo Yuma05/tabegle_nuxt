@@ -76,7 +76,7 @@ export default {
       if (this.place) searchQuery.set('place', this.place)
       if (this.category) searchQuery.set('category', this.category)
       await axios
-        .get('/api/search/shop?' + searchQuery.toString())
+        .get('/api/search/shop/?' + searchQuery.toString())
         .then((res) => (this.shops = res.data.shops))
         .catch((error) => console.log(error))
         .finally(() => (this.isLoading = false))
