@@ -78,12 +78,6 @@ export default {
   build: {},
 
   proxy: {
-    // '/api': {
-    //   target: 'https://tabegle.herokuapp.com',
-    //   pathRewrite: {
-    //     '^/api': '/api',
-    //   },
-    // },
     '/api': 'https://tabegle.herokuapp.com',
   },
 }
