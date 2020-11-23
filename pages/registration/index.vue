@@ -86,6 +86,7 @@ export default {
         .then((res) => {
           this.$cookies.set('key', res.data.key)
           this.$router.push('/keep')
+          this.$store.commit('changeLoginStatus', true)
         })
         .catch((e) => {
           console.log(e.response)
