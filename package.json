@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "API_URL=/ nuxt build",
+    "build": "https://tabegle.herokuapp.com=/ nuxt build",
     "start": "nuxt start",
     "export": "nuxt export",
     "serve": "nuxt serve",
