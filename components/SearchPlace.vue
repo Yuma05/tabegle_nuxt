@@ -53,7 +53,7 @@ export default {
   watch: {
     search(val) {
       if (val == null || val.length <= 1) return
-      if (this.isLoading) return
+      // if (this.isLoading) return
 
       this.isLoading = true
       axios
