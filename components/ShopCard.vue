@@ -187,6 +187,9 @@ export default {
       default: () => [],
     },
   },
+  mounted() {
+    this.sortTabelog()
+  },
   data() {
     return {}
   },
