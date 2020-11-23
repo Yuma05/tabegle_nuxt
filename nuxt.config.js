@@ -63,7 +63,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'https://tabegle.herokuapp.com',
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
