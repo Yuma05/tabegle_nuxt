@@ -1,5 +1,13 @@
 <template>
-  <v-card max-width="700px" class="mx-auto mt-7" elevation="5">
+  <v-card
+    max-width="700px"
+    class="mx-auto mt-7"
+    elevation="5"
+    :loading="isLoading"
+  >
+    <template slot="progress">
+      <v-progress-linear color="orange" indeterminate></v-progress-linear>
+    </template>
     <v-card-title>
       <span class="mx-auto text-h5 font-weight-bold">Login</span>
     </v-card-title>
@@ -44,6 +52,7 @@ import axios from 'axios'
 export default {
   data: () => ({
     valid: false,
+    isLoading: false,
     name: '',
     nameRules: [(v) => !!v || 'ユーザーネームは必須です'],
     password: '',
@@ -54,6 +63,7 @@ export default {
 
   methods: {
     signIn() {
+      this.isLoading = true
       const headers = { 'X-CSRFToken': this.$cookies.get('csrftoken') }
       const data = new FormData()
       data.append('username', this.name)
@@ -62,8 +72,8 @@ export default {
         .post('/api/dj-rest-auth/login/', data, { headers })
         .then((res) => {
           this.$cookies.set('key', res.data.key)
-          this.$router.push('/keep')
           this.$store.commit('changeLoginStatus', true)
+          this.$router.push('/keep')
         })
         .catch((e) => {
           if (e.response.status === 400) {
@@ -76,6 +86,7 @@ export default {
             console.log(e.response)
           }
         })
+        .finally(() => (this.isLoading = false))
     },
   },
 }
