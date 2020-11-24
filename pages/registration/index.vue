@@ -1,10 +1,8 @@
 <template>
   <v-card max-width="700px" class="mx-auto mt-7" elevation="5">
-    <v-card-title
-      ><span class="mx-auto text-h5 font-weight-bold"
-        >Registration</span
-      ></v-card-title
-    >
+    <v-card-title>
+      <span class="mx-auto text-h5 font-weight-bold"> Registration </span>
+    </v-card-title>
     <div
       v-if="isShowError"
       class="text-center text-body-2 red--text text--lighten-1"
@@ -21,7 +19,6 @@
           required
           color="orange"
         ></v-text-field>
-
         <v-text-field
           v-model="password"
           :rules="passwordRules"
@@ -32,7 +29,7 @@
         ></v-text-field>
         <v-text-field
           v-model="confirmPassword"
-          :rules="[passwordConfirmationRule]"
+          :rules="passwordConfirmRule"
           label="パスワードを再度入力してください"
           required
           type="password"
@@ -68,9 +65,12 @@ export default {
     errorMessage: '',
   }),
   computed: {
-    passwordConfirmationRule() {
-      return () =>
-        this.password === this.confirmPassword || 'パスワードが一致しません'
+    passwordConfirmRule() {
+      return [
+        () =>
+          this.password === this.confirmPassword || 'パスワードが一致しません',
+        (v) => !!v || 'パスワードの再入力は必須です',
+      ]
     },
   },
 
@@ -91,14 +91,14 @@ export default {
         .catch((e) => {
           console.log(e.response)
           if (e.response.status === 400) {
-            this.errorMessage =
-              '同じユーザー名が登録済みです。ユーザー名を変更してください。'
+            this.errorMessage = Object.values(e.response.data)[0][0]
             this.isShowError = true
             this.password = ''
             this.confirmPassword = ''
           } else {
             this.errorMessage =
               '申し訳ありません。時間をおいてから再度アクセスしてください。'
+            console.log(e.response)
           }
         })
     },
