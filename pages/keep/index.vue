@@ -40,10 +40,9 @@ export default {
   methods: {
     async getUserShops() {
       const key = this.$cookies.get('key')
-      if (key == null) {
+      if (!this.$store.getters.loggedin) {
         this.$router.push('/login')
       }
-
       const headers = {
         'X-CSRFToken': this.$cookies.get('csrftoken'),
         Authorization: key,
