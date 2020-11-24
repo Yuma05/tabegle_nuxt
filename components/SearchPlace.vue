@@ -43,6 +43,7 @@ export default {
 
   computed: {
     items() {
+      // かな，漢字で検索できるように
       return this.entries.map((entry) => {
         const searchTarget = entry.name + entry.kana
         return Object.assign({}, entry, { searchTarget })
@@ -52,7 +53,6 @@ export default {
   watch: {
     search(val) {
       if (val == null || val.length <= 1) return
-      // if (this.isLoading) return
 
       this.isLoading = true
       axios
@@ -68,6 +68,7 @@ export default {
 
   methods: {
     sendPlace() {
+      // P;aceコードのみ返す
       if (this.model == null) {
         this.$emit('changePlace', '')
       } else {

@@ -43,6 +43,7 @@ export default {
 
   computed: {
     items() {
+      // かな，漢字で検索できるように
       return this.entries.map((entry) => {
         const searchTarget = entry.name + entry.kana
         return Object.assign({}, entry, { searchTarget })
@@ -53,13 +54,11 @@ export default {
   watch: {
     search(val) {
       if (val == null || val.length <= 1) return
-      // if (this.isLoading) return
 
       this.isLoading = true
       axios
         .get('/api/search/category/?q=' + val)
         .then((res) => {
-          console.log(res.data)
           this.entries = res.data
         })
         .catch((error) => console.log(error))
@@ -69,6 +68,7 @@ export default {
 
   methods: {
     sendCategory() {
+      // Categoryコードのみ返す
       if (this.model == null) {
         this.$emit('changeCategory', '')
       } else {
