@@ -67,7 +67,7 @@ export default {
     logout() {
       const key = this.$cookies.get('key')
       const headers = {
-        // 'X-CSRFToken': this.$cookies.get('csrftoken'),
+        'X-CSRFToken': this.$cookies.get('csrftoken'),
         Authorization: key,
       }
       axios
