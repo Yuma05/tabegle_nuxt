@@ -51,6 +51,7 @@ export default {
       await axios
         .get('/api/user-shop/', { headers })
         .then((res) => {
+          console.log(res)
           this.shops = res.data.shops
           this.userShopIds = res.data.shops.map((item) => item.id)
         })
