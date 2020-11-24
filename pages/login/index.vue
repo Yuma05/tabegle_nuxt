@@ -1,8 +1,8 @@
 <template>
   <v-card max-width="700px" class="mx-auto mt-7" elevation="5">
-    <v-card-title
-      ><span class="mx-auto text-h5 font-weight-bold">Login</span></v-card-title
-    >
+    <v-card-title>
+      <span class="mx-auto text-h5 font-weight-bold">Login</span>
+    </v-card-title>
     <div
       v-if="isShowError"
       class="text-center text-body-2 red--text text--lighten-1"
@@ -34,7 +34,6 @@
             sign in
           </v-btn>
         </div>
-        {{ test }}
       </v-form>
     </v-card-text>
   </v-card>
@@ -49,7 +48,6 @@ export default {
     nameRules: [(v) => !!v || 'ユーザーネームは必須です'],
     password: '',
     passwordRules: [(v) => !!v || 'パスワードは必須です'],
-    test: '',
     isShowError: false,
     errorMessage: '',
   }),
@@ -75,8 +73,8 @@ export default {
           } else {
             this.errorMessage =
               '申し訳ありません。時間をおいてから再度アクセスしてください。'
+            console.log(e.response)
           }
-          console.log(e.response)
         })
     },
   },
