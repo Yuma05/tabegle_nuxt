@@ -38,7 +38,7 @@
             <v-col cols="auto">
               <div style="width: 40px">
                 <v-img
-                  src="/tabelog.svg"
+                  src="/icon/tabelog.svg"
                   height="30"
                   width="30"
                   class="mr-2"
@@ -57,7 +57,7 @@
             <v-col cols="auto" align-self="center">
               <div style="width: 35px; margin-left: 5px">
                 <v-img
-                  src="/google.svg"
+                  src="/icon/google.svg"
                   height="20"
                   width="20"
                   class="mr-2"
@@ -132,7 +132,7 @@
                 <div class="d-flex flex-row">
                   <div class="d-flex flex-row ml-3">
                     <v-img
-                      src="/tabelog.svg"
+                      src="/icon/tabelog.svg"
                       height="30"
                       width="30"
                       class="mr-2"
@@ -145,7 +145,7 @@
                   </div>
                   <div class="d-flex flex-row ml-5">
                     <v-img
-                      src="/google.svg"
+                      src="/icon/google.svg"
                       height="20"
                       width="20"
                       class="mr-2"

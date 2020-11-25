@@ -6,7 +6,11 @@
       >
         😋 エリア・カテゴリからお店を検索して比較
       </div>
-      <v-img max-width="1000" src="/screenshot01.png" class="mx-auto"></v-img>
+      <v-img
+        max-width="1000"
+        src="/introduction/screenshot01.png"
+        class="mx-auto"
+      ></v-img>
     </v-card>
     <v-card elevation="10" class="mt-10 mx-auto" max-width="1300">
       <div
@@ -14,7 +18,11 @@
       >
         <v-icon color="red">mdi-bookmark</v-icon> 気になるお店はKeep
       </div>
-      <v-img max-width="1000" src="/screenshot02.png" class="mx-auto"></v-img>
+      <v-img
+        max-width="1000"
+        src="/introduction/screenshot02.png"
+        class="mx-auto"
+      ></v-img>
     </v-card>
   </div>
 </template>
