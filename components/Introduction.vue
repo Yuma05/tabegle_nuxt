@@ -8,7 +8,7 @@
       </div>
       <v-img
         max-width="1000"
-        src="/introduction/screenshot01.png"
+        src="/introduction/screenshot01.jpg"
         class="mx-auto"
       ></v-img>
     </v-card>
@@ -20,7 +20,7 @@
       </div>
       <v-img
         max-width="1000"
-        src="/introduction/screenshot02.png"
+        src="/introduction/screenshot02.jpg"
         class="mx-auto"
       ></v-img>
     </v-card>
