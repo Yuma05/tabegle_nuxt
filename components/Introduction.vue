@@ -1,6 +1,6 @@
 <template>
   <div class="text-center grey--text text--darken-3 mt-10">
-    <v-card elevation="10" max-width="1300" class="mx-auto">
+    <v-card elevation="5" max-width="1300" class="mx-auto">
       <div
         class="text-center pt-5 mb-5 text-subtitle-1 text-sm-h6 grey--text text--darken-3"
       >
@@ -12,7 +12,7 @@
         class="mx-auto"
       ></v-img>
     </v-card>
-    <v-card elevation="10" class="mt-10 mx-auto" max-width="1300">
+    <v-card elevation="5" class="mt-10 mx-auto" max-width="1300">
       <div
         class="text-center pt-5 mb-5 text-subtitle-1 text-sm-h6 grey--text text--darken-3"
       >
