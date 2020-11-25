@@ -23,6 +23,10 @@
       @delete="deleteUserShop"
       @add="addUserShop"
     ></shop-card>
+    <div v-else-if="isSearched">
+      お店が見つかりませんでした。キーワードを変えてお試しください。
+    </div>
+    <introduction v-else></introduction>
     <v-dialog v-model="dialog" max-width="400">
       <v-card>
         <v-card-text>
@@ -46,18 +50,26 @@ import SearchPlace from '@/components/SearchPlace'
 import SearchCategory from '@/components/SearchCategory'
 import ShopCard from '@/components/ShopCard'
 import LoadingBox from '@/components/LoadingBox'
+import Introduction from '@/components/Introduction'
 
 export default {
-  components: { LoadingBox, ShopCard, SearchCategory, SearchPlace },
+  components: {
+    Introduction,
+    LoadingBox,
+    ShopCard,
+    SearchCategory,
+    SearchPlace,
+  },
   data() {
     return {
       test: 0,
       place: '',
       category: '',
       isLoading: false,
+      isSearched: false,
+      dialog: false,
       shops: [],
       userShopIds: [],
-      dialog: false,
     }
   },
   mounted() {
@@ -77,7 +89,10 @@ export default {
       if (this.category) searchQuery.set('category', this.category)
       await axios
         .get('/api/search/shop/?' + searchQuery.toString())
-        .then((res) => (this.shops = res.data.shops))
+        .then((res) => {
+          this.isSearched = true
+          this.shops = res.data.shops
+        })
         .catch((error) => console.log(error))
         .finally(() => (this.isLoading = false))
     },
