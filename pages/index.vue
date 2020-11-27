@@ -23,7 +23,10 @@
       @delete="deleteUserShop"
       @add="addUserShop"
     ></shop-card>
-    <div v-else-if="isSearched">
+    <div
+      v-else-if="isSearched"
+      class="text-center grey--text text--darken-2 mt-8"
+    >
       お店が見つかりませんでした。キーワードを変えてお試しください。
     </div>
     <introduction v-else></introduction>
