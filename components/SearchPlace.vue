@@ -58,7 +58,6 @@ export default {
       axios
         .get('/api/search/place/?q=' + val)
         .then((res) => {
-          console.log(res.data)
           this.entries = res.data
         })
         .catch((error) => console.log(error))
