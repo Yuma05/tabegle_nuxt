@@ -40,7 +40,7 @@ export default {
   methods: {
     async getUserShops() {
       const key = this.$cookies.get('key')
-      if (!this.$store.getters.loggedin) {
+      if (key == null) {
         this.$router.push('/login')
       }
       const headers = {
@@ -50,7 +50,6 @@ export default {
       await axios
         .get('/api/user-shop/', { headers })
         .then((res) => {
-          console.log(res)
           this.shops = res.data.shops
           this.userShopIds = res.data.shops.map((item) => item.id)
         })
